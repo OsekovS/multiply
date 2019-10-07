@@ -1,9 +1,13 @@
+// window.onload = function(e){
 
+//    console.log(multiply('10000','10000'))
+// }
 module.exports  = function multiply(a, b){
       a=a.split('').reverse(),
    b=b.split('').reverse()
    let c = [];
-   
+   // console.log(a)
+   // debugger
    for (var i = 0; i < b.length; i++) {
       for (var j = 0; j < a.length; j++) {
          // console.log(a[j]*b[i])
@@ -13,13 +17,16 @@ module.exports  = function multiply(a, b){
             c[i]=[];
          }
          c[i][j+i]=(c[i][j+i]) ? c[i][j+i] + d :(d);
-
+         // c[i][j]=(c[i]!==undefined&&c[i][j]) ? c[i][j] + d : d;
+         // console.log(c[i]!==undefined)
          if(c[i][j+i]>9){
             c[i][j+i+1]=parseInt(c[i][j+i]/10)
             c[i][j+i]=c[i][j+i]%10
             // c[i][j]=c[i][j]%10
          }
-
+         // if(i===2) debugger
+         // debugger
+         // c[a.length*i+j] = b[i]*a[j]
       }
    }
    // console.log(c)
@@ -55,3 +62,32 @@ module.exports  = function multiply(a, b){
    return result.reverse().join('')
    // console.log(result.reverse().join(''))
 }
+// module.exports = function multiply(a, b) {
+//    var aa = a.split('').reverse();
+//    var bb = b.split('').reverse();
+ 
+//    var stack = [];
+// for (var i = 0; i < aa.length; i++) {
+//    for (var j = 0; j < bb.length; j++) {
+//      var m = aa[i] * bb[j];
+//      stack[i + j] = (stack[i + j]) ? stack[i + j] + m : m;
+//    }
+//  }
+
+//  for (var i = 0; i < stack.length; i++) {
+//    var num = stack[i] % 10;
+//    var move = Math.floor(stack[i] / 10);
+//    stack[i] = num;
+
+//    if (stack[i + 1])
+//      stack[i + 1] += move;
+//    else if (move != 0)
+//      stack[i + 1] = move;
+//  }
+
+
+//  return stack.reverse().join('');
+// }
+
+// console.log(multiply('123456789123','123456789123'))
+
